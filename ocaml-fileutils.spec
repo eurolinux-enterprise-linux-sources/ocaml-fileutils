@@ -3,21 +3,22 @@
 
 Name:           ocaml-fileutils
 Version:        0.4.4
-Release:        7%{?dist}
+Release:        9%{?dist}
 Summary:        OCaml library for common file and filename operations
 
 License:        LGPLv2 with exceptions
 URL:            https://forge.ocamlcore.org/projects/ocaml-fileutils/
 Source0:        https://forge.ocamlcore.org/frs/download.php/892/ocaml-fileutils-0.4.4.tar.gz
-ExcludeArch:    sparc64 s390 s390x
+
+ExcludeArch:    s390
 
 BuildRequires:  ocaml >= 4.00.1
 BuildRequires:  ocaml-findlib-devel >= 1.3.3-3
 BuildRequires:  ocaml-ocamldoc
-BuildRequires:  ocaml-camlp4-devel
 %if 0%{?fedora} || 0%{?rhel} <= 6
 BuildRequires:  ocaml-ounit-devel
 %endif
+BuildRequires:  ocaml-ocamlbuild
 
 
 %description
@@ -97,6 +98,16 @@ make test
 
 
 %changelog
+* Sat Sep 23 2017 Richard W.M. Jones <rjones@redhat.com> - 0.4.4-9
+- Remove ExcludeArch and build on s390x.
+  related: rhbz#1447989
+
+* Fri Sep 22 2017 Richard W.M. Jones <rjones@redhat.com> - 0.4.4-8
+- Rebuild for OCaml 4.05.0
+- Remove bogus dependency on camlp4.
+- Add missing/implicit dependency on ocamlbuild.
+  resolves: rhbz#1447989
+
 * Fri Aug 08 2014 Richard W.M. Jones <rjones@redhat.com> - 0.4.4-7
 - Resolves: rhbz#1125626
 
