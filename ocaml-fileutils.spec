@@ -3,7 +3,7 @@
 
 Name:           ocaml-fileutils
 Version:        0.4.4
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        OCaml library for common file and filename operations
 
 License:        LGPLv2 with exceptions
@@ -97,6 +97,9 @@ make test
 
 
 %changelog
+* Fri Aug 08 2014 Richard W.M. Jones <rjones@redhat.com> - 0.4.4-7
+- Resolves: rhbz#1125626
+
 * Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 0.4.4-6
 - Mass rebuild 2013-12-27
 
